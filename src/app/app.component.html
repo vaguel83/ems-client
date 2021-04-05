@@ -1,0 +1,26 @@
+ <mat-toolbar color="primary">
+    <button mat-icon-button class="icon" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Employee Management System</span>
+    <span class="spacer"></span>
+  </mat-toolbar>
+
+
+<mat-drawer-container class="ems-container" >
+  <mat-drawer #drawer mode="side" class="ems-sidenav" opened >
+    <div><button mat-raised-button color="primary" routerLink="employees" class="nav-link" routerLinkActive="active">
+      Employee List
+    </button></div>
+    <p></p>
+    <div><button mat-raised-button color="primary" routerLink="add" class="nav-link" routerLinkActive="active">
+      Add Employee
+    </button></div>
+  </mat-drawer>
+  <mat-drawer-content class="ems-sidenav-content">
+      <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+ <div class="mat-body ems-footer">Employ Management System<br>Christodoulidis Evangelos: <a mat-button color="primary" href="mailto:vaguel83@gmail.com">vaguel83@gmail.com</a></div>
+

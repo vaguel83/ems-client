@@ -1,0 +1,24 @@
+<h2 class="mat-h2">Employee Details</h2>
+
+<mat-card class="ems-card">
+  <mat-card-header>
+    <div mat-card-avatar><mat-icon>account_circle</mat-icon></div>
+
+    <mat-card-title>{{employee.firstName}} {{employee.lastName}}</mat-card-title>
+    <mat-card-subtitle>Employee ID: {{employee.id}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+      <p>
+        <label class="mat-body"><strong>Email:</strong> {{employee.email}} </label>
+      </p>
+    <p>
+      <label class="mat-body"><strong>Address:</strong> {{employee.address}} </label>
+    </p>
+    <p>
+      <label class="mat-body"><strong>Mobile:</strong> {{employee.mobile}} </label>
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="list()">Back to Employee List</button>
+  </mat-card-actions>
+</mat-card>

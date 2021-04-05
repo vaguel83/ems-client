@@ -1,0 +1,12 @@
+table {
+  width: 100%;
+}
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  padding: 10px;
+}
+
+.ems-action-buttons{
+margin-left: 5px;
+  margin-right: 5px;
+}

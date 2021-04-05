@@ -1,0 +1,64 @@
+<h2 class="mat-h2">Update Employee Details</h2>
+<form class="ems-form" (ngSubmit)="onSubmit()">
+  <!--  first name-->
+  <mat-form-field class="ems-full-width">
+    <mat-label>First Name</mat-label>
+    <input type="text" matInput [formControl]="firstnameFormControl" [errorStateMatcher]="firstnameMatcher"
+           placeholder="ex. John" [(ngModel)]="employee.firstName" maxlength="50">
+    <mat-error *ngIf="firstnameFormControl.hasError('required')">
+      First Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <p></p>
+  <!--  last name-->
+  <mat-form-field class="ems-full-width">
+    <mat-label>Last Name</mat-label>
+    <input type="text" matInput [formControl]="lastnameFormControl" [errorStateMatcher]="lastnameMatcher"
+           placeholder="ex. Smith" [(ngModel)]="employee.lastName" maxlength="50">
+    <mat-error *ngIf="lastnameFormControl.hasError('required')">
+      Last Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <p></p>
+  <!--email-->
+  <mat-form-field class="ems-full-width">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="emailMatcher"
+           placeholder="ex. pat@example.com" [(ngModel)]="employee.email" maxlength="50">
+    <mat-hint>Please enter a valid e-mail!</mat-hint>
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      <strong>Invalid e-mail</strong>
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <p></p>
+  <!--address-->
+  <mat-form-field class="ems-full-width">
+    <mat-label>Address</mat-label>
+    <input type="text" matInput [formControl]="addressFormControl" [errorStateMatcher]="addressMatcher"
+           placeholder="ex. Aristotelous 1 T.K. 54248 Thessaloniki" [(ngModel)]="employee.address" maxlength="200">
+    <mat-error *ngIf="addressFormControl.hasError('required')">
+      Address is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <p></p>
+  <!--mobile-->
+  <mat-form-field class="ems-full-width">
+    <mat-label>Mobile Phone Number</mat-label>
+    <input type="text" matInput [formControl]="mobileFormControl" [errorStateMatcher]="mobileMatcher"
+           placeholder="+30 6977 100 200" [(ngModel)]="employee.mobile" maxlength="50">
+    <mat-error *ngIf="mobileFormControl.hasError('required')">
+      Mobile Phone Number is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <p></p>
+  <button color="primary" mat-raised-button>Submit</button>
+
+  <button type="button" mat-raised-button routerLink="employees" class="nav-link ems-action-buttons" routerLinkActive="active" (click)="this.gotoList()">
+    Return to Employee List
+  </button>
+</form>
+
+
