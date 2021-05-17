@@ -1,6 +1,9 @@
-# EmsClient
+# Employee Management System Client
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.6.
+
+This is the Front End for the ems-server https://github.com/vaguel83/ems_server and with this you can perform the Basic CRUD functions in the Database.
+It was developed using Angular and the Angular Material UI.
 
 ## Development server
 
