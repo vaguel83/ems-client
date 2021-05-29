@@ -13,10 +13,8 @@ import {DialogDeleteComponent} from '../dialog-delete/dialog-delete.component';
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
-  // This is the full list with all the info uncomment this and the commented html lists for the full list.
-  // displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'address', 'mobile', 'actions'];
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'actions'];
-  employees_data: Observable<Employee[]>;
+  employeeData: Observable<Employee[]>;
 
   constructor(private employeeService: EmployeeService,
               private router: Router,
@@ -28,7 +26,7 @@ export class EmployeeListComponent implements OnInit {
   }
 
   reloadData() {
-    this.employees_data = this.employeeService.getEmployeesList();
+    this.employeeData = this.employeeService.getEmployeesList();
   }
 
   openDeleteDialog(id: number){
